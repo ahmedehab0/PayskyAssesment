@@ -10,3 +10,12 @@ Views/: User interface templates and components (for MVC applications)
 Services/: Business logic implementations and service layer classes
 Repositories/: Data access layer components for interacting with the database
 Migrations/: Database migration files for managing database schema changes
+
+Getting Started
+
+Ensure you have .NET 9.0 SDK installed
+Clone the repository
+Navigate to the project directory
+Run dotnet restore to restore dependencies
+Run dotnet build to build the project
+Run dotnet run to start the application
