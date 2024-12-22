@@ -1,0 +1,104 @@
+# Build results
+bin/
+obj/
+out/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+*.tlog
+*.vspscc
+
+# Visual Studio Code settings
+.vscode/
+.vscode/*
+
+# Visual Studio settings
+.vs/
+
+# ASP.NET Core files
+appsettings*.json
+appsettings*.Development.json
+
+# IDE-specific files
+.idea/
+*.iml
+
+# Rider files
+.idea/
+*.sln.iml
+
+# Auto-generated files
+*.generated.cs
+*.g.cs
+*.g.i.cs
+*.Designer.cs
+
+# Package directories
+node_modules/
+wwwroot/
+
+# Dependencies
+*.dll
+*.pdb
+*.exe
+*.so
+*.dylib
+*.class
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+resharper.xml
+resharper-user.xml
+
+# NuGet Packages
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Environment variables
+.env
+.env.*
+
+# Coverage and test results
+coverage/
+*.coverage
+*.coveragexml
+*.trx
+TestResults/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Azure
+*.publishsettings
+.publishprofiles/
+
+# Git files
+*.orig
+
+# Other
+*.bak
+*.swp
+*.zip
+*.tar.gz
