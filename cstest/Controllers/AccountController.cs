@@ -16,38 +16,54 @@ namespace cstest.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAccount([FromBody] Account account)
         {
-            var newAccount = await _accountService.CreateAccount(account);
-            return Ok(newAccount);
+            try {
+                var newAccount = await _accountService.CreateAccount(account);
+                return Ok(newAccount);
+            } catch (Exception e) {
+                return BadRequest(e.Message);
+            }
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAccountById(int id)
         {
-            var account = await _accountService.GetAccountById(id);
-            if (account == null)
-            {
-                return NotFound();
+            try {
+                var account = await _accountService.GetAccountById(id);
+                if (account == null)
+                {
+                    return NotFound();
+                }
+                return Ok(account);
+            } catch (Exception e) {
+                return BadRequest(e.Message);
             }
-            return Ok(account);
         }
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAccount(int id, [FromBody] Account account)
         {
-            var updatedAccount = await _accountService.UpdateAccount(account);
-            if (updatedAccount == null)
-            {
-                return NotFound();
+            try {
+                var updatedAccount = await _accountService.UpdateAccount(account);
+                if (updatedAccount == null)
+                {
+                    return NotFound();
+                }
+                return Ok(updatedAccount);
+            } catch (Exception e) {
+                return BadRequest(e.Message);
             }
-            return Ok(updatedAccount);
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAccount(int id)
         {
-            var account = await _accountService.DeleteAccount(id);
-            if (account == null)
-            {
-                return NotFound();
-            }
-            return Ok(account);
+            try {
+                var deletedAccount = await _accountService.DeleteAccount(id);
+                if (deletedAccount == null)
+                {
+                    return NotFound();
+                }
+                return Ok(deletedAccount);
+            } catch (Exception e) {
+                return BadRequest(e.Message);
         }
+    }
     }
 }
