@@ -24,6 +24,11 @@ namespace cstest.Services
         public async Task<decimal> Balance(int AccountId)
         {
             var account = await _accountRepo.GetAccountById(AccountId);
+            if (account.AccountType != "Checking")
+            {
+                _logger.LogError("Invalid account type");
+                throw new Exception("Invalid account type");
+            }
             if (account == null)
             {
                 _logger.LogError("Account not found");
@@ -39,6 +44,11 @@ namespace cstest.Services
             {
                 _logger.LogError("Account not found");
                 throw new Exception("Account not found");
+            }
+              if (account.AccountType != "Checking")
+            {
+                _logger.LogError("Invalid account type");
+                throw new Exception("Invalid account type");
             }
             if (amount <= 0)
             {
@@ -72,6 +82,11 @@ namespace cstest.Services
                     {
                         _logger.LogError("Account not found");
                         throw new Exception("Account not found");
+                    }
+                    if (fromAccount.AccountType != "Checking" || toAccount.AccountType != "Checking")
+                    {
+                        _logger.LogError("Invalid account type");
+                        throw new Exception("Invalid account type");
                     }
                     if (amount <= 0)
                     {
@@ -118,6 +133,11 @@ namespace cstest.Services
             {
                 _logger.LogError("Account not found");
                 throw new Exception("Account not found");
+            }
+            if (account.AccountType != "Checking")
+            {
+                _logger.LogError("Invalid account type");
+                throw new Exception("Invalid account type");
             }
             if (account.Balance + 500 < amount)
             {

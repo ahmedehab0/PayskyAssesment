@@ -18,7 +18,6 @@ builder.Services.AddControllers()
 
 
 // Register services with appropriate lifetimes
-builder.Services.AddScoped<IAccountHolderService, AccountHolderService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<IAccountRepo, AccountRepo>();

@@ -32,13 +32,11 @@ namespace cstest.Services
     public class AccountService : IAccountService
     {
         private readonly IAccountRepo _accountRepo;
-        private readonly IAccountHolderRepo _accountHolderRepo;
         private readonly ITransactionRepo _transactionRepo;
 
-        public AccountService(IAccountRepo accountRepo, IAccountHolderRepo accountHolderRepo, ITransactionRepo transactionRepo)
+        public AccountService(IAccountRepo accountRepo, ITransactionRepo transactionRepo)
         {
             _accountRepo = accountRepo;
-            _accountHolderRepo = accountHolderRepo;
             _transactionRepo = transactionRepo;
         }
 
