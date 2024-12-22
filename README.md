@@ -96,15 +96,15 @@ Response:
   "message": "Error message describing the issue."
 }
 
-API Documentation for CheckingAccountOperationController
+API Documentation for CheckingAccountOperationController and SavingAccountOperation
 
 Overview
 
-The CheckingAccountOperationController provides a set of API endpoints to perform operations on a checking account. These include deposit, withdrawal, transfer, and balance inquiry. The controller interacts with an account operation service to process requests.
+if you approach one of the urls with the diffrent type of account you are gonna get an error, make sure to use the url that matches your account type
 
 Base URL
 
-/api/CheckingAccountOperation
+/api/checking|savingaccountoperation
 
 Endpoints
 
