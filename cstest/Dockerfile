@@ -1,5 +1,5 @@
 # Use the official .NET SDK image to build the application
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 
 # Set the working directory in the container
 WORKDIR /app
@@ -14,10 +14,10 @@ RUN dotnet restore
 COPY . ./
 
 # Build the application
-RUN dotnet publish -c Release -o out
+RUN dotnet publish /app/cstest.csproj -c Release -o /app/out
 
 # Use the runtime image to run the application
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 
 WORKDIR /app
 
