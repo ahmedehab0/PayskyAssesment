@@ -26,6 +26,7 @@ Run the following command to execute the application:
 
 For Linux:
 First, make the application executable:
+
 chmod +x .\bin\Release\net9.0\lin-x64\publish\cstest
 Then, run the application:
 .\bin\Release\net9.0\lin-x64\publish\cstest
