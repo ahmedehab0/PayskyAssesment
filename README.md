@@ -3,12 +3,13 @@ it is a simple banking system that allow for basic operation like: deposit, with
 
 I developed it using three layer archeticture design pattern and followed the solid principles to allow flexeipility and scalability
 
-Project strucutre:
 
 Database Design:
 
 ![image](https://github.com/user-attachments/assets/ba862baa-673a-4600-8d70-2d777af74ed5)
 
+
+Project strucutre:
 
 Controllers/: Contains API controllers that handle HTTP requests and define endpoints
 
