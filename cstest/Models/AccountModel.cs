@@ -1,11 +1,16 @@
 namespace cstest.Models
 {
+      public enum AccountType
+    {
+        savings,
+        checking,
+    }
     public class Account
     {
         public int Id { get; set; }
         public required string AccountNumber { get; set; }
         public decimal Balance { get; set; }
-        public required string AccountType { get; set; }
+        public required AccountType AccountType { get; set; }
 
 
         // Collection of transactions where this account is the source account

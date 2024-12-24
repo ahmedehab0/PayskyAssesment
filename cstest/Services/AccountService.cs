@@ -21,7 +21,7 @@ namespace cstest.Services
             {
                 Id = account.Id,
                 AccountNumber = account.AccountNumber,
-                AccountType = account.AccountType,
+                AccountType = account.AccountType == 0 ? "savings" : "checking",
                 Balance = account.Balance
             };
         }
@@ -42,43 +42,79 @@ namespace cstest.Services
 
         public async Task<AccountDTO> CreateAccount(Account account)
         {
-            if (account == null)
+            try 
             {
-                throw new ArgumentNullException(nameof(account));
+                return AccountMapper.MAP(await _accountRepo.CreateAccount(account));
             }
-            return AccountMapper.MAP(await _accountRepo.CreateAccount(account));
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public async Task<AccountDTO> DeleteAccount(int id)
         {
-            return AccountMapper.MAP(await _accountRepo.DeleteAccount(id));
+            try
+            {
+                return AccountMapper.MAP(await _accountRepo.DeleteAccount(id));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public async Task<IEnumerable<AccountDTO>> GetAllAccounts()
         {
-            var accounts = await _accountRepo.GetAllAccounts();
-            return accounts.Select(account => AccountMapper.MAP(account));
+            try
+            {
+                var accounts = await _accountRepo.GetAllAccounts();
+                return accounts.Select(account => AccountMapper.MAP(account));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public async Task<AccountDTO> GetAccountById(int id)
         {
-            return AccountMapper.MAP(await _accountRepo.GetAccountById(id));
+            try       
+            {
+                return AccountMapper.MAP(await _accountRepo.GetAccountById(id));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public async Task<AccountDTO> GetAccountByAccountNumber(string accountNumber)
         {
-            return AccountMapper.MAP(await _accountRepo.GetAccountByAccountNumber(accountNumber));
+            try
+            {
+                return AccountMapper.MAP(await _accountRepo.GetAccountByAccountNumber(accountNumber));
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public async Task<AccountDTO> UpdateAccount(Account account)
         {
-            var accountExists = await _accountRepo.GetAccountById(account.Id);
-            if (accountExists == null)
+            try 
             {
-                throw new Exception("Account does not exist");
+                if (account == null)
+                {
+                    throw new ArgumentNullException(nameof(account));
+                }
+                return AccountMapper.MAP(await _accountRepo.UpdateAccount(account));
             }
-
-            return AccountMapper.MAP(await _accountRepo.UpdateAccount(account));
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }

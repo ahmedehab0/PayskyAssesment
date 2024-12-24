@@ -27,7 +27,7 @@ namespace cstest.Services
                 _logger.LogError("Account not found");
                 throw new Exception("Account not found");
             }
-            if (account.AccountType != "Savings")
+            if (account.AccountType != AccountType.savings)
             {
                 _logger.LogError("Invalid account type");
                 throw new Exception("Invalid account type");
@@ -43,7 +43,7 @@ namespace cstest.Services
                 _logger.LogError("Account not found");
                 throw new Exception("Account not found");
             }
-            if (account.AccountType != "Savings")
+            if (account.AccountType != AccountType.savings)
             {
                 _logger.LogError("Invalid account type");
                 throw new Exception("Invalid account type");
@@ -80,7 +80,7 @@ namespace cstest.Services
                         _logger.LogError("Account not found");
                         throw new Exception("Account not found");
                     }
-                    if (fromAccount.AccountType != "Savings" || toAccount.AccountType != "Savings")
+                    if (fromAccount.AccountType != AccountType.savings)
                     {
                         _logger.LogError("Invalid account type");
                         throw new Exception("Invalid account type");
@@ -131,7 +131,7 @@ namespace cstest.Services
                 _logger.LogError("Account not found");
                 throw new Exception("Account not found");
             }
-            if (account.AccountType != "Savings")
+            if (account.AccountType != AccountType.savings)
             {
                 _logger.LogError("Invalid account type");
                 throw new Exception("Invalid account type");

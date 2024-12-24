@@ -19,20 +19,23 @@ namespace cstest.Data
          protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Account>()
+        .Property(e => e.AccountType)
+        .HasConversion<string>();
 
             // Configure the relationship between Transaction and Account for SourceAccount
             modelBuilder.Entity<Transaction>()
                 .HasOne(t => t.SourceAccount)
                 .WithMany(a => a.SourceTransactions)
                 .HasForeignKey(t => t.SourceAccountId)
-                .OnDelete(DeleteBehavior.Restrict);  // Prevent cascading deletes
+                .OnDelete(DeleteBehavior.Cascade); 
 
             // Configure the relationship between Transaction and Account for DestinationAccount
             modelBuilder.Entity<Transaction>()
                 .HasOne(t => t.DestinationAccount)
                 .WithMany(a => a.DestinationTransactions)
                 .HasForeignKey(t => t.DestinationAccountId)
-                .OnDelete(DeleteBehavior.Restrict);  // Prevent cascading deletes
+                .OnDelete(DeleteBehavior.Cascade); 
         }
     }
 }
