@@ -22,13 +22,16 @@ Add your PostgreSQL connection string to the appsettings.json file.
 3. Running the application
 For Windows:
 Run the following command to execute the application:
+
 .\bin\Release\net9.0\win-x64\publish\cstest.exe
 
 For Linux:
 First, make the application executable:
 
 chmod +x .\bin\Release\net9.0\lin-x64\publish\cstest
+
 Then, run the application:
+
 .\bin\Release\net9.0\lin-x64\publish\cstest
 
 
