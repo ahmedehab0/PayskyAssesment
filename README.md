@@ -1,7 +1,7 @@
 This repo is for paysky assesment:
 it is a simple banking system that allow for basic operation like: deposit, withdraw, transfer, retreive_balance
 
-I developed it using mvc design pattern and followed the solid principles to allow flexeipility and scalability
+I developed it using three layer archeticture design pattern and followed the solid principles to allow flexeipility and scalability
 
 Project strucutre:
 Controllers/: Contains API controllers that handle HTTP requests and define endpoints
