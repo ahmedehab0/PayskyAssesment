@@ -11,14 +11,15 @@ Services/: Business logic implementations and service layer classes
 Repositories/: Data access layer components for interacting with the database
 Migrations/: Database migration files for managing database schema changes
 
-Getting Started
-
-Ensure you have .NET 9.0 SDK installed
-Clone the repository
+Getting Started (you don't have to worriy about .net version just make sure you postgre installed)
 Navigate to the project directory
-Run dotnet restore to restore dependencies
-Run dotnet build to build the project
-Run dotnet run to start the application
+cd cstest
+add your postgre connection string in the appsettings.json file
+for windows:
+run .\bin\Release\net9.0\win-x64\publish\cstest.exe 
+for linux:
+run chmod +x .\bin\Release\net9.0\lin-x64\publish\cstest 
+run .\bin\Release\net9.0\lin-x64\publish\cstest
 
 API Documentation for Account Management
 
@@ -43,7 +44,7 @@ Example:
 {
  "AccountNumber": "1234567890",
  "Balance": 0,
- "AccountType": "saving"
+ "AccountType": 0
 }
 
 Response:
@@ -54,7 +55,7 @@ Response:
   "id": 1,
   "AccountNumber": "1234567890",
  "Balance": 0,
- "AccountType": "saving"
+ "AccountType": "savings"
 }
 
 400 Bad Request
@@ -81,7 +82,7 @@ Response:
   "id": 1,
   "AccountNumber": "1234567890",
  "Balance": 0,
- "AccountType": "saving"
+ "AccountType": "savings"
 }
 
 404 Not Found
@@ -104,7 +105,8 @@ if you approach one of the urls with the diffrent type of account you are gonna 
 
 Base URL
 
-/api/checking|savingaccountoperation
+/api/checkingaccountoperation
+/api/savingaccountoperation
 
 Endpoints
 
@@ -224,13 +226,3 @@ Error Handling
 
 All endpoints return a 400 Bad Request status code if an error occurs, along with an error message in the response body.
 
-Models
-
-DepositRequest
-
-public class DepositRequest
-{
-    public int AccountId { get; set; }
-    public int? ToAccountId { get; set; } // For transfer
-    public double Amount { get; set; }
-}
