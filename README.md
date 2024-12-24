@@ -27,11 +27,14 @@ Getting Started
 Follow the steps below to get the project up and running. Make sure you have PostgreSQL installed and configured before proceeding.
 
 1. Navigate to the project directory
+2. 
 cd cstest
-2. Configure your PostgreSQL connection
+
+4. Configure your PostgreSQL connection
+5. 
 Add your PostgreSQL connection string to the appsettings.json file.
 
-3. Running the application
+6. Running the application
 For Windows:
 Run the following command to execute the application:
 
