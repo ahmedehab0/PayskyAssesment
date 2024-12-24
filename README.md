@@ -5,6 +5,11 @@ I developed it using three layer archeticture design pattern and followed the so
 
 Project strucutre:
 
+Database Design:
+
+![image](https://github.com/user-attachments/assets/ba862baa-673a-4600-8d70-2d777af74ed5)
+
+
 Controllers/: Contains API controllers that handle HTTP requests and define endpoints
 
 Models/: Data models and domain entities that represent the application's data structures
