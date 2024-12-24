@@ -11,15 +11,25 @@ Services/: Business logic implementations and service layer classes
 Repositories/: Data access layer components for interacting with the database
 Migrations/: Database migration files for managing database schema changes
 
-Getting Started (you don't have to worriy about .net version just make sure you postgre installed)
-Navigate to the project directory
+Getting Started
+Follow the steps below to get the project up and running. Make sure you have PostgreSQL installed and configured before proceeding.
+
+1. Navigate to the project directory
 cd cstest
-add your postgre connection string in the appsettings.json file
-for windows:
-run .\bin\Release\net9.0\win-x64\publish\cstest.exe 
-for linux:
-run chmod +x .\bin\Release\net9.0\lin-x64\publish\cstest 
-run .\bin\Release\net9.0\lin-x64\publish\cstest
+2. Configure your PostgreSQL connection
+Add your PostgreSQL connection string to the appsettings.json file.
+
+3. Running the application
+For Windows:
+Run the following command to execute the application:
+.\bin\Release\net9.0\win-x64\publish\cstest.exe
+
+For Linux:
+First, make the application executable:
+chmod +x .\bin\Release\net9.0\lin-x64\publish\cstest
+Then, run the application:
+.\bin\Release\net9.0\lin-x64\publish\cstest
+
 
 API Documentation for Account Management
 
